@@ -19,8 +19,8 @@ show_allxray_menu() {
     echo -e "${BB}————————————————————————————————————————————————————————${NC}"
     echo -e ""
     echo -e " ${MB}[1]${NC} ${YB}Create Xray${NC}"
-    echo -e " ${MB}[2]${NC} ${YB}Menu Trojan${NC}"
-    echo -e " ${MB}[3]${NC} ${YB}Menu Vmess${NC}"
+    echo -e " ${MB}[2]${NC} ${YB}Create Trojan${NC}"
+    echo -e " ${MB}[3]${NC} ${YB}Create Vmess${NC}"
     echo -e " ${MB}[4]${NC} ${YB}Extend Xray${NC}"
     echo -e " ${MB}[5]${NC} ${YB}Delete Xray${NC}"
     echo -e " ${MB}[6]${NC} ${YB}User Login${NC}"
@@ -37,8 +37,8 @@ handle_allxray_menu() {
     echo -e ""
     case $opt in
         1) clear ; create-xray ;;
-        2) clear ; trojan ;;
-        3) clear ; vmess ;;
+        2) clear ; add-trojan ;;
+        3) clear ; add-vmess ;;
         4) clear ; extend-xray ;;
         5) clear ; del-xray ;;
         6) clear ; cek-xray ;;
