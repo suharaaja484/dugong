@@ -254,7 +254,7 @@ print_msg $YB "Selamat datang! Skrip ini akan memasang dan mengkonfigurasi WireP
 
 print_msg $YB "Instalasi WireProxy"
 rm -rf /usr/local/bin/wireproxy >> /dev/null 2>&1
-wget -q -O /usr/local/bin/wireproxy https://github.com/dugong-lewat/1clickxray/raw/main/wireproxy
+wget -q -O /usr/local/bin/wireproxy https://github.com/suharaaja484/dugong/raw/main/wireproxy
 chmod +x /usr/local/bin/wireproxy
 check_success "Gagal instalasi WireProxy."
 print_msg $YB "Mengkonfigurasi WireProxy"
@@ -718,7 +718,7 @@ echo "$serverpsk" > /usr/local/etc/xray/serverpsk
 
 # Konfigurasi Xray-core
 print_msg $YB "Mengonfigurasi Xray-core..."
-XRAY_CONFIG=raw.githubusercontent.com/dugong-lewat/1clickxray/main/config
+XRAY_CONFIG=raw.githubusercontent.com/suharaaja484/dugong/main/config
 wget -q -O /usr/local/etc/xray/config/00_log.json "https://${XRAY_CONFIG}/00_log.json"
 wget -q -O /usr/local/etc/xray/config/01_api.json "https://${XRAY_CONFIG}/01_api.json"
 wget -q -O /usr/local/etc/xray/config/02_dns.json "https://${XRAY_CONFIG}/02_dns.json"
@@ -766,12 +766,12 @@ cat > /usr/local/etc/xray/config/04_inbounds.json << END
             "xver": 2
           },
           {
-            "path": "/vmess-ws",
+            "path": "/vmess",
             "dest": "@vmess-ws",
             "xver": 2
           },
           {
-            "path": "/trojan-ws",
+            "path": "/trojan",
             "dest": "@trojan-ws",
             "xver": 2
           },
@@ -930,7 +930,7 @@ cat > /usr/local/etc/xray/config/04_inbounds.json << END
       "streamSettings": {
         "wsSettings": {
           "acceptProxyProtocol": true,
-          "path": "/vmess-ws"
+          "path": "/vmess"
         },
         "network": "ws",
         "security": "none"
@@ -959,7 +959,7 @@ cat > /usr/local/etc/xray/config/04_inbounds.json << END
       "streamSettings": {
         "wsSettings": {
           "acceptProxyProtocol": true,
-          "path": "/trojan-ws"
+          "path": "/trojan"
         },
         "network": "ws",
         "security": "none"
@@ -1393,12 +1393,12 @@ cat > /usr/local/etc/xray/config/04_inbounds.json << END
             "xver": 2
           },
           {
-            "path": "/vmess-ws",
+            "path": "/vmess",
             "dest": "@vmess-ws",
             "xver": 2
           },
           {
-            "path": "/trojan-ws",
+            "path": "/trojan",
             "dest": "@trojan",
             "xver": 2
           },
@@ -1470,7 +1470,7 @@ cat > /usr/local/etc/xray/config/04_inbounds.json << END
       "streamSettings": {
         "wsSettings": {
           "acceptProxyProtocol": true,
-          "path": "/trojan-ws"
+          "path": "/trojan"
         },
         "network": "ws",
         "security": "none"
@@ -1654,8 +1654,8 @@ sleep 1.5
 
 # Konfigurasi Nginx
 print_msg $YB "Mengonfigurasi Nginx..."
-wget -q -O /var/www/html/index.html https://raw.githubusercontent.com/dugong-lewat/1clickxray/main/index.html
-wget -q -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/dugong-lewat/1clickxray/main/nginx.conf
+wget -q -O /var/www/html/index.html https://raw.githubusercontent.com/suharaaja484/dugong/main/index.html
+wget -q -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/suharaaja484/dugong/main/nginx.conf
 domain=$(cat /usr/local/etc/xray/dns/domain)
 sed -i "s/server_name web.com;/server_name $domain;/g" /etc/nginx/nginx.conf
 sed -i "s/server_name \*.web.com;/server_name \*.$domain;/" /etc/nginx/nginx.conf
@@ -1675,7 +1675,7 @@ sudo iptables -A INPUT -p tcp --dport 6881:6889 -j DROP
 sudo iptables -A INPUT -p tcp --dport 6881:6889 -m string --algo bm --string "BitTorrent" -j DROP
 sudo iptables -A INPUT -p udp --dport 6881:6889 -m string --algo bm --string "BitTorrent" -j DROP
 cd /usr/bin
-GITHUB=raw.githubusercontent.com/dugong-lewat/1clickxray/main/
+GITHUB=raw.githubusercontent.com/suharaaja484/dugong/main/
 echo -e "${GB}[ INFO ]${NC} ${YB}Mengunduh menu utama...${NC}"
 wget -q -O menu "https://${GITHUB}/menu/menu.sh"
 wget -q -O allxray "https://${GITHUB}/menu/allxray.sh"
