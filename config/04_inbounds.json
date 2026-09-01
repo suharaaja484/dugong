@@ -40,12 +40,12 @@
             "xver": 2
           },
           {
-            "path": "/vmess-ws",
+            "path": "/vmess",
             "dest": "@vmess-ws",
             "xver": 2
           },
           {
-            "path": "/trojan-ws",
+            "path": "/trojan",
             "dest": "@trojan-ws",
             "xver": 2
           },
@@ -204,7 +204,7 @@
       "streamSettings": {
         "wsSettings": {
           "acceptProxyProtocol": true,
-          "path": "/vmess-ws"
+          "path": "/vmess"
         },
         "network": "ws",
         "security": "none"
@@ -233,7 +233,7 @@
       "streamSettings": {
         "wsSettings": {
           "acceptProxyProtocol": true,
-          "path": "/trojan-ws"
+          "path": "/trojan"
         },
         "network": "ws",
         "security": "none"
@@ -820,12 +820,12 @@
             "xver": 2
           },
           {
-            "path": "/vmess-ws",
+            "path": "/vmess",
             "dest": "@vmess-ws",
             "xver": 2
           },
           {
-            "path": "/trojan-ws",
+            "path": "/trojan",
             "dest": "@trojan",
             "xver": 2
           },
@@ -897,7 +897,7 @@
       "streamSettings": {
         "wsSettings": {
           "acceptProxyProtocol": true,
-          "path": "/trojan-ws"
+          "path": "/trojan"
         },
         "network": "ws",
         "security": "none"
