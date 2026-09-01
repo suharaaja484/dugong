@@ -1679,6 +1679,10 @@ GITHUB=raw.githubusercontent.com/suharaaja484/dugong/main/
 echo -e "${GB}[ INFO ]${NC} ${YB}Mengunduh menu utama...${NC}"
 wget -q -O menu "https://${GITHUB}/menu/menu.sh"
 wget -q -O allxray "https://${GITHUB}/menu/allxray.sh"
+wget -q -O trojan "https://${GITHUB}/menu/trojan.sh"
+wget -q -O vmess "https://${GITHUB}/menu/vmess.sh"
+wget -q -O add-trojan "https://${GITHUB}/trojan/add-trojan.sh"
+wget -q -O add-vmess "https://${GITHUB}/vmess/add-vmess.sh"
 wget -q -O del-xray "https://${GITHUB}/xray/del-xray.sh"
 wget -q -O extend-xray "https://${GITHUB}/xray/extend-xray.sh"
 wget -q -O create-xray "https://${GITHUB}/xray/create-xray.sh"
@@ -1699,7 +1703,7 @@ wget -q -O log-xray "https://${GITHUB}/other/log-xray.sh"
 wget -q -O update-xray "https://${GITHUB}/other/update-xray.sh"
 
 echo -e "${GB}[ INFO ]${NC} ${YB}Memberikan izin eksekusi pada skrip...${NC}"
-chmod +x del-xray extend-xray create-xray cek-xray log-xray menu allxray xp dns certxray about clear-log update-xray route-xray
+chmod +x del-xray extend-xray create-xray cek-xray log-xray menu allxray xp dns certxray about clear-log update-xray route-xray trojan vmess add-trojan add-vmess
 echo -e "${GB}[ INFO ]${NC} ${YB}Persiapan Selesai.${NC}"
 sleep 3
 cd
