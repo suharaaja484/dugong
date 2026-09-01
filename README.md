@@ -32,17 +32,17 @@ Saweria: https://saweria.co/dugonglewat
 
 **Link Instalasi Opsi 1**
 ```
-bash -c "$(wget -qO- https://raw.githubusercontent.com/dugong-lewat/1clickxray/main/install.sh)"
+bash -c "$(wget -qO- https://raw.githubusercontent.com/suharaaja484/dugong/main/install.sh)"
 ```
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/dugong-lewat/1clickxray/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/suharaaja484/dugong/main/install.sh)"
 ```
 
 
 **Link Instalasi Opsi 2**
 ```
-bash -c "$(wget -qO- https://raw.githubusercontent.com/dugong-lewat/1clickxray/main/install2.sh)"
+bash -c "$(wget -qO- https://raw.githubusercontent.com/suharaaja484/dugong/main/install2.sh)"
 ```
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/dugong-lewat/1clickxray/main/install2.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/suharaaja484/dugong/main/install2.sh)"
 ```
