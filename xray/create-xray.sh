@@ -27,9 +27,28 @@ add_xray_config() {
     local content=$2
     sed -i "/#$section\$/a\\#&@ $user $exp\n$content" /usr/local/etc/xray/config/04_inbounds.json
 }
-
+until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
+echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "          ${WB}----- [  Create All Xray  ] -----${NC}         "
+echo -e "                ${WB}Vmess, Vless, Trojan${NC}                "
+echo -e "${BB}————————————————————————————————————————————————————${NC}"
+read -rp "Username: " -e user
+CLIENT_EXISTS=$(grep -w $user /usr/local/etc/xray/config/04_inbounds.json | wc -l)
+if [[ ${CLIENT_EXISTS} == '1' ]]; then
+clear
+echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "          ${WB}----- [  Create All Xray  ] -----${NC}         "
+echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e ""
+echo -e "${YB}A client with the specified name was already created, please choose another name.${NC}"
+echo -e ""
+echo -e "${BB}————————————————————————————————————————————————————${NC}"
+read -n 1 -s -r -p "Press any key to back on menu"
+add-xray
+clear
+fi
+done
 # Inisialisasi Variabel
-user=$(generate_random_string 7)
 domain=$(cat /usr/local/etc/xray/dns/domain)
 cipher="aes-256-gcm"
 cipher2="2022-blake3-aes-256-gcm"
